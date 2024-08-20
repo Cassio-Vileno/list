@@ -5,7 +5,7 @@
       <p>TODO SUB TITLE</p>
     </div>
     <div class="container-icons">
-      <a>
+      <a href="">
         <img src="../assets/icons/pencil.svg" alt="editar" />
       </a>
       <a href="">
@@ -35,6 +35,16 @@ export default {
   background-color: #fff;
   align-items: center;
   justify-content: space-between;
+
+  -webkit-box-shadow: -12px 12px 20px -17px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -12px 12px 20px -17px rgba(0, 0, 0, 0.75);
+  box-shadow: -12px 12px 20px -17px rgba(0, 0, 0, 0.75);
+}
+
+.container-title {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .container-title h2,
