@@ -1,18 +1,35 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <header>
+      <h1>Tarefas do dia</h1>
+      <img src="../assets/icons/calendar.svg" />
+    </header>
+
+    <TodoItem />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import TodoItem from "@/components/TodoItem.vue";
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
-    HelloWorld
-  }
-}
+    TodoItem,
+  },
+};
 </script>
+
+<style scoped>
+header {
+  display: flex;
+  background-color: #9395d3;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+header > h1 {
+  color: #fff;
+  font-size: 1.5rem;
+}
+</style>
