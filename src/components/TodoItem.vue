@@ -5,9 +5,9 @@
       <p>TODO SUB TITLE</p>
     </div>
     <div class="container-icons">
-      <a href="">
+      <router-link class="link" to="/edit-task">
         <img src="../assets/icons/pencil.svg" alt="editar" />
-      </a>
+      </router-link>
       <a href="">
         <img src="../assets/icons/trash.svg" alt="excluir" />
       </a>
@@ -21,9 +21,7 @@
 <script>
 export default {
   name: "TodoItem",
-  props: {
-    msg: String,
-  },
+  props: {},
 };
 </script>
 
@@ -63,6 +61,9 @@ p {
 }
 
 .container-icons > a > img {
+  height: 34px;
+}
+.link > img {
   height: 34px;
 }
 
