@@ -1,16 +1,17 @@
 <template>
   <div class="add-task">
-    <HeaderTitle :title="title" />
+    <HeaderTitle :title="headerTitle" />
     <form>
-      <input type="text" placeholder="Titulo" />
-      <textarea placeholder="Detalhes da tarefa" name="" id=""></textarea>
-      <button>Adicionar</button>
+      <input v-model="title" type="text" placeholder="Titulo" />
+      <textarea v-model="details" placeholder="Detalhes da tarefa"></textarea>
+      <button @click.prevent.stop="addTask()">Adicionar</button>
     </form>
   </div>
 </template>
 
 <script>
 import HeaderTitle from "@/components/HeaderTitle.vue";
+import { v4 as uuidv4 } from "uuid";
 
 export default {
   name: "AddTask",
@@ -19,8 +20,24 @@ export default {
   },
   data() {
     return {
-      title: "Adicionar tarefa",
+      headerTitle: "Adicionar tarefa",
+      title: "",
+      details: "",
     };
+  },
+
+  methods: {
+    addTask() {
+      if (this.title) {
+        this.$store.commit("addTask", {
+          id: (this.uuid = uuidv4()),
+          title: this.title,
+          cotent: this.details,
+          state: "open",
+          createAt: new Date(),
+        });
+      }
+    },
   },
 };
 </script>

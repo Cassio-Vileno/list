@@ -1,14 +1,6 @@
 <template>
   <ul class="list">
-    <li>
-      <TodoItem />
-    </li>
-    <li>
-      <TodoItem />
-    </li>
-    <li>
-      <TodoItem />
-    </li>
+    <TodoItem v-for="task in $store.state.tasks" :key="task.id" :task="task" />
   </ul>
 </template>
 

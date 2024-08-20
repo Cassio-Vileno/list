@@ -1,27 +1,33 @@
 <template>
-  <div class="item">
+  <li class="item">
     <div class="container-title">
-      <h2>TODO TITLE</h2>
-      <p>TODO SUB TITLE</p>
+      <h2>{{ task.title }}</h2>
     </div>
     <div class="container-icons">
       <router-link class="link" to="/edit-task">
         <img src="../assets/icons/pencil.svg" alt="editar" />
       </router-link>
-      <a href="">
+      <a @click.prevent.stop="removeTask()">
         <img src="../assets/icons/trash.svg" alt="excluir" />
       </a>
       <a href="">
         <img src="../assets/icons/checkCircle.svg" alt="concluido" />
       </a>
     </div>
-  </div>
+  </li>
 </template>
 
 <script>
 export default {
   name: "TodoItem",
-  props: {},
+  props: {
+    task: Object,
+  },
+  methods: {
+    removeTask() {
+      this.$store.commit("removeTask", this.task.id);
+    },
+  },
 };
 </script>
 
