@@ -81,7 +81,11 @@ form > div {
 }
 
 form > div > input {
+<<<<<<< HEAD
   font-size: 1.1rem;
+=======
+  font-size: 0.813rem;
+>>>>>>> e23a927cfc7efd4e159e6dd71efcc84c6f70ff32
   background-color: #fff;
   padding: 15px 20px;
   border: none;
@@ -94,7 +98,11 @@ form > div > textarea,
 }
 
 form > div > textarea {
+<<<<<<< HEAD
   font-size: 1.1rem;
+=======
+  font-size: 0.813rem;
+>>>>>>> e23a927cfc7efd4e159e6dd71efcc84c6f70ff32
   height: 500px;
   background-color: #fff;
   padding: 15px 20px;
