@@ -70,19 +70,18 @@ export default {
 }
 
 .container-title {
+  max-width: 60%;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.container-title h2,
-p {
-  padding: 0;
-  margin: 0;
-}
-
 .container-title > h2 {
   font-size: 1.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  padding: 0;
 }
 
 .title-task-open {
