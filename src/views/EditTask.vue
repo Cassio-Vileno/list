@@ -1,12 +1,12 @@
 <template>
   <div>
-    <HeaderTitle :title="title" />
-    <form>
-      <input type="text" placeholder="Titulo" />
-      <textarea placeholder="Detalhes da tarefa" name="" id=""></textarea>
+    <HeaderTitle :title="titleHeader" />
+    <form @submit.prevent="updateTask">
+      <input v-model="title" type="text" placeholder="Titulo" />
+      <textarea v-model="details" placeholder="Detalhes da tarefa"></textarea>
       <div class="container-button">
         <router-link to="/" class="button-back">Cancelar</router-link>
-        <button>Editar</button>
+        <button type="submit">Editar</button>
       </div>
     </form>
   </div>
@@ -22,8 +22,43 @@ export default {
   },
   data() {
     return {
-      title: "Editar tarefa",
+      titleHeader: "Editar tarefa",
+      title: "",
+      details: "",
     };
+  },
+  computed: {
+    taskId() {
+      return this.$route.params.id;
+    },
+    task() {
+      return this.$store.state.tasks.find(
+        (item) => item.id === parseInt(this.taskId)
+      );
+    },
+  },
+  watch: {
+    task: {
+      immediate: true,
+      handler(task) {
+        if (task) {
+          this.title = task.title;
+          this.details = task.details;
+        }
+      },
+    },
+  },
+  methods: {
+    updateTask() {
+      const originalTask = this.task;
+      const updatedTask = {
+        ...originalTask,
+        title: this.title,
+        details: this.details,
+      };
+      this.$store.dispatch("editItem", updatedTask);
+      this.$router.push("/");
+    },
   },
 };
 </script>

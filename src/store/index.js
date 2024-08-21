@@ -2,17 +2,11 @@ import { createStore } from 'vuex';
 
 export default createStore({
   state: {
-    task: {
-      title: '',
-      cotent: '',
-      state: '',
-      createAt: ''
-    },
     tasks: [
       {
         id: 1,
         title: 'Teste 1',
-        cotent: 'Teste',
+        details: 'Teste',
         state: 'open',
         createAt: '2024-07-24 04:47:47.000'
       },
@@ -29,12 +23,21 @@ export default createStore({
     removeTask(state, id) {
      const index = state.tasks.findIndex(o => o.id === id)
      state.tasks.splice(index, 1);
+    },
+
+    editTask(state, updatedTask) {
+      const index = state.tasks.findIndex(item => item.id === updatedTask.id);
+      if (index !== -1) {
+        state.tasks.splice(index, 1, updatedTask);
+      }
     }
-    
   },
   actions: {
     removeItem({ commit }, itemId) {
       commit('removeTask', itemId)
+    },
+    editItem({ commit }, updatedTask) {
+      commit('editTask', updatedTask);
     }
   },
   modules: {

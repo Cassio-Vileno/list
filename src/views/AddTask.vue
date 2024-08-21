@@ -36,6 +36,7 @@ export default {
           state: "open",
           createAt: new Date(),
         });
+        this.$router.push("/");
       }
     },
   },

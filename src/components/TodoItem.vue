@@ -4,7 +4,10 @@
       <h2>{{ task.title }}</h2>
     </div>
     <div class="container-icons">
-      <router-link class="link" to="/edit-task">
+      <router-link
+        class="link"
+        :to="{ name: 'EditTask', params: { id: task.id } }"
+      >
         <img src="../assets/icons/pencil.svg" alt="editar" />
       </router-link>
       <a @click.prevent.stop="removeTask()">

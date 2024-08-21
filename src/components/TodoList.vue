@@ -12,9 +12,7 @@ export default {
   components: {
     TodoItem,
   },
-  props: {
-    msg: String,
-  },
+  props: {},
 };
 </script>
 
