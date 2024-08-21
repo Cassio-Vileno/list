@@ -1,50 +1,54 @@
 <template>
   <div class="home">
     <header>
-      <h1>Tarefas do dia</h1>
-      <img src="../assets/icons/calendar.svg" />
+      <div>
+        <h1>Tarefas do dia</h1>
+        <img src="../assets/icons/calendar.svg" />
+      </div>
     </header>
     <div class="container">
-      <TodoList :filter="filterList" />
+      <div>
+        <TodoList :filter="filterList" />
+      </div>
+      <router-link to="/completed-task">
+        <div class="tasks-finished">
+          <svg
+            width="20"
+            height="14"
+            viewBox="0 0 20 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 6.625L6.83375 12.25L18.5 1"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </router-link>
+      <router-link to="/add-task">
+        <div class="add-task-button">
+          <svg
+            width="16"
+            height="17"
+            viewBox="0 0 16 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 1.54688V15.3281M1.875 8.4375H14.125H1.875Z"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </router-link>
     </div>
-    <router-link to="/completed-task">
-      <div class="tasks-finished">
-        <svg
-          width="20"
-          height="14"
-          viewBox="0 0 20 14"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M1 6.625L6.83375 12.25L18.5 1"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </div>
-    </router-link>
-    <router-link to="/add-task">
-      <div class="add-task-button">
-        <svg
-          width="16"
-          height="17"
-          viewBox="0 0 16 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M8 1.54688V15.3281M1.875 8.4375H14.125H1.875Z"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </div>
-    </router-link>
   </div>
 </template>
 
@@ -67,19 +71,34 @@ export default {
 <style scoped>
 header {
   display: flex;
+  justify-content: center;
   background-color: #9395d3;
-  justify-content: space-between;
-  padding: 15px;
-  position: relative;
 }
 
-header > h1 {
+header > div {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+header > div > h1 {
   color: #fff;
   font-size: 1.5rem;
 }
 
 .container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
   padding-top: 20px;
+}
+
+.container > div {
+  width: 100%;
+  height: max-content;
+  max-width: 630px;
 }
 
 .add-task-button {

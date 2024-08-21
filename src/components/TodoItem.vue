@@ -82,7 +82,7 @@ p {
 }
 
 .container-title > h2 {
-  font-size: 0.813;
+  font-size: 1.1rem;
 }
 
 .title-task-open {
@@ -91,10 +91,6 @@ p {
 
 .title-task-finished {
   color: #686868;
-}
-
-.container-title > p {
-  font-size: 0.625;
 }
 
 .container-icons > a > img {

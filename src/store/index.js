@@ -2,15 +2,7 @@ import { createStore } from 'vuex';
 
 export default createStore({
   state: {
-    tasks: [
-      {
-        id: "1",
-        title: 'Teste 1',
-        details: 'Teste',
-        state: 'open',
-        createAt: '2024-07-24 04:47:47.000'
-      },
-    ]
+    tasks: []
     
   },
   getters: {
