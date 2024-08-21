@@ -32,10 +32,13 @@ export default createStore({
       }
     },
 
-    markTaskAsFinished(state, id) {
+    changeTaskStatus(state, id) {
       const task = state.tasks.find(item => item.id === id);
-      if (task) {
+      if (!task) return;
+      if(task.state == 'open') {
         task.state = 'finished';
+      }else {
+        task.state = 'open';
       }
     }
   },
@@ -48,8 +51,8 @@ export default createStore({
       commit('editTask', updatedTask);
     },
 
-    markTaskAsFinished({ commit }, id) {
-      commit('markTaskAsFinished', id);
+    changeTaskStatus({ commit }, id) {
+      commit('changeTaskStatus', id);
     },
   },
   modules: {

@@ -48,7 +48,7 @@ export default {
       this.$store.commit("removeTask", this.task.id);
     },
     finishTask(id) {
-      this.$store.dispatch("markTaskAsFinished", id);
+      this.$store.dispatch("changeTaskStatus", id);
     },
   },
 };
