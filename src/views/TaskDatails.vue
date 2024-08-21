@@ -75,6 +75,7 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 0 15px;
 }
 
 .container > div {
@@ -83,7 +84,6 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 0 15px;
 }
 
 .title-content {
