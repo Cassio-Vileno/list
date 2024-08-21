@@ -5,10 +5,29 @@
       <img src="../assets/icons/calendar.svg" />
     </header>
     <div class="container">
-      <TodoList />
+      <TodoList :filter="filterList" />
     </div>
+    <router-link to="/completed-task">
+      <div class="tasks-finished">
+        <svg
+          width="20"
+          height="14"
+          viewBox="0 0 20 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 6.625L6.83375 12.25L18.5 1"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </router-link>
     <router-link to="/add-task">
-      <a href="" class="add-task-button">
+      <div class="add-task-button">
         <svg
           width="16"
           height="17"
@@ -24,7 +43,7 @@
             stroke-linejoin="round"
           />
         </svg>
-      </a>
+      </div>
     </router-link>
   </div>
 </template>
@@ -36,6 +55,11 @@ export default {
   name: "HomeView",
   components: {
     TodoList,
+  },
+  data() {
+    return {
+      filterList: "open",
+    };
   },
 };
 </script>
@@ -69,6 +93,20 @@ header > h1 {
   background-color: #9395d3;
   position: absolute;
   bottom: 20px;
+  right: 20px;
+}
+
+.tasks-finished {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: none;
+  background-color: #9395d3;
+  position: absolute;
+  bottom: 100px;
   right: 20px;
 }
 </style>

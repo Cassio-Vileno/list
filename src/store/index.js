@@ -30,15 +30,27 @@ export default createStore({
       if (index !== -1) {
         state.tasks.splice(index, 1, updatedTask);
       }
+    },
+
+    markTaskAsFinished(state, id) {
+      const task = state.tasks.find(item => item.id === id);
+      if (task) {
+        task.state = 'finished';
+      }
     }
   },
   actions: {
     removeItem({ commit }, itemId) {
       commit('removeTask', itemId)
     },
+
     editItem({ commit }, updatedTask) {
       commit('editTask', updatedTask);
-    }
+    },
+
+    markTaskAsFinished({ commit }, id) {
+      commit('markTaskAsFinished', id);
+    },
   },
   modules: {
   }

@@ -30,5 +30,6 @@ header {
 
 header > h1 {
   color: #fff;
+  font-size: 1.8rem;
 }
 </style>

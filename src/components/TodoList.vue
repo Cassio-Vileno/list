@@ -1,6 +1,6 @@
 <template>
   <ul class="list">
-    <TodoItem v-for="task in $store.state.tasks" :key="task.id" :task="task" />
+    <TodoItem v-for="task in filteredTasks" :key="task.id" :task="task" />
   </ul>
 </template>
 
@@ -9,10 +9,25 @@ import TodoItem from "@/components/TodoItem.vue";
 
 export default {
   name: "TodoList",
+  props: {
+    filter: {
+      type: String,
+      default: "",
+    },
+  },
   components: {
     TodoItem,
   },
-  props: {},
+  computed: {
+    filteredTasks() {
+      if (!this.filter) {
+        return this.$store.state.tasks;
+      }
+      return this.$store.state.tasks.filter(
+        (task) => task.state === this.filter
+      );
+    },
+  },
 };
 </script>
 
