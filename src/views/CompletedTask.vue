@@ -2,7 +2,9 @@
   <div>
     <HeaderTitle :title="titleHeader" />
     <div class="container">
-      <TodoList :filter="filterList" />
+      <div>
+        <TodoList :filter="filterList" />
+      </div>
     </div>
   </div>
 </template>
@@ -34,6 +36,12 @@ header > h1 {
 }
 
 .container {
+  display: flex;
+  justify-content: center;
+}
+.container > div {
+  width: 100%;
+  max-width: 630px;
   padding-top: 20px;
 }
 

@@ -2,9 +2,11 @@
   <div class="add-task">
     <HeaderTitle :title="headerTitle" />
     <form>
-      <input v-model="title" type="text" placeholder="Titulo" />
-      <textarea v-model="details" placeholder="Detalhes da tarefa"></textarea>
-      <button @click.prevent.stop="addTask()">Adicionar</button>
+      <div>
+        <input v-model="title" type="text" placeholder="Titulo" />
+        <textarea v-model="details" placeholder="Detalhes da tarefa"></textarea>
+        <button @click.prevent.stop="addTask()">Adicionar</button>
+      </div>
     </form>
   </div>
 </template>
@@ -46,27 +48,34 @@ export default {
 <style scoped>
 form {
   display: flex;
+  justify-content: center;
+}
+
+form > div {
+  width: 100%;
+  max-width: 630px;
+  display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 20px;
   padding: 0 15px;
 }
 
-form > input {
-  font-size: 0.813;
+form > div > input {
+  font-size: 1.1rem;
   background-color: #fff;
   padding: 15px 20px;
   border: none;
   border-radius: 8px;
 }
 
-form > textarea,
+form > div > textarea,
 ::placeholder {
-  font-size: 17px;
+  font-size: 1.063rem;
 }
 
-form > textarea {
-  font-size: 0.813;
+form > div > textarea {
+  font-size: 1.1rem;
   height: 500px;
   background-color: #fff;
   padding: 15px 20px;
@@ -80,7 +89,7 @@ button {
   padding: 18px;
   border-radius: 8px;
   color: #fff;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
 }
 </style>

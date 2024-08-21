@@ -2,11 +2,13 @@
   <div>
     <HeaderTitle :title="titleHeader" />
     <form @submit.prevent="updateTask">
-      <input v-model="title" type="text" placeholder="Titulo" />
-      <textarea v-model="details" placeholder="Detalhes da tarefa"></textarea>
-      <div class="container-button">
-        <router-link to="/" class="button-back">Cancelar</router-link>
-        <button type="submit">Editar</button>
+      <div>
+        <input v-model="title" type="text" placeholder="Titulo" />
+        <textarea v-model="details" placeholder="Detalhes da tarefa"></textarea>
+        <div class="container-button">
+          <router-link to="/" class="button-back">Cancelar</router-link>
+          <button type="submit">Editar</button>
+        </div>
       </div>
     </form>
   </div>
@@ -65,27 +67,34 @@ export default {
 <style scoped>
 form {
   display: flex;
+  justify-content: center;
+}
+
+form > div {
+  width: 100%;
+  max-width: 630px;
+  display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 20px;
   padding: 0 15px;
 }
 
-form > input {
-  font-size: 0.813;
+form > div > input {
+  font-size: 1.1rem;
   background-color: #fff;
   padding: 15px 20px;
   border: none;
   border-radius: 8px;
 }
 
-form > textarea,
+form > div > textarea,
 ::placeholder {
-  font-size: 17px;
+  font-size: 1.063rem;
 }
 
-form > textarea {
-  font-size: 0.813;
+form > div > textarea {
+  font-size: 1.1rem;
   height: 500px;
   background-color: #fff;
   padding: 15px 20px;
@@ -100,7 +109,7 @@ button {
   color: #fff;
   border-radius: 8px;
   padding: 18px;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   border: none;
 }
@@ -114,7 +123,7 @@ button {
   background-color: #878896;
   color: #fff;
   border-radius: 8px;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   text-decoration: none;
 }
