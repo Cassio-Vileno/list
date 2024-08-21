@@ -1,5 +1,11 @@
 <template>
   <HeaderTitle :title="titleHeader" />
+  <div class="info-date">
+    <p>Criado em: {{ formatDate(task.createAt) }}</p>
+    <p v-if="task.updateAt">
+      última atualização: {{ formatDate(task.updateAt) }}
+    </p>
+  </div>
   <div class="container">
     <div class="title-content">
       <h2>{{ task.title }}</h2>
@@ -44,9 +50,17 @@ export default {
       return this.$route.params.id;
     },
     task() {
-      return this.$store.state.tasks.find(
-        (item) => item.id === parseInt(this.taskId)
-      );
+      return this.$store.state.tasks.find((item) => item.id === this.taskId);
+    },
+  },
+  methods: {
+    formatDate(dateString) {
+      const date = new Date(dateString);
+      return date.toLocaleDateString("pt-BR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      });
     },
   },
 };
@@ -57,7 +71,6 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 20px;
   padding: 0 15px;
 }
 
@@ -93,5 +106,11 @@ export default {
   position: absolute;
   bottom: 20px;
   right: 20px;
+}
+
+.info-date {
+  display: flex;
+  padding: 0 15px;
+  justify-content: space-between;
 }
 </style>

@@ -32,9 +32,7 @@ export default {
       return this.$route.params.id;
     },
     task() {
-      return this.$store.state.tasks.find(
-        (item) => item.id === parseInt(this.taskId)
-      );
+      return this.$store.state.tasks.find((item) => item.id === this.taskId);
     },
   },
   watch: {
@@ -55,6 +53,7 @@ export default {
         ...originalTask,
         title: this.title,
         details: this.details,
+        updateAt: new Date(),
       };
       this.$store.dispatch("editItem", updatedTask);
       this.$router.push("/");

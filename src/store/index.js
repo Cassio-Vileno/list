@@ -4,7 +4,7 @@ export default createStore({
   state: {
     tasks: [
       {
-        id: 1,
+        id: "1",
         title: 'Teste 1',
         details: 'Teste',
         state: 'open',

@@ -32,7 +32,7 @@ export default {
         this.$store.commit("addTask", {
           id: (this.uuid = uuidv4()),
           title: this.title,
-          cotent: this.details,
+          details: this.details,
           state: "open",
           createAt: new Date(),
         });
