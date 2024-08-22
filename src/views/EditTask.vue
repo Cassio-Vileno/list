@@ -94,8 +94,7 @@ form > div > textarea,
 }
 
 form > div > textarea {
-  font-size: 1.1rem;
-  height: 500px;
+  height: 400px;
   background-color: #fff;
   padding: 15px 20px;
   border-radius: 8px;

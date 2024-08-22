@@ -108,7 +108,7 @@ export default {
 .details-content {
   display: flex;
   font-size: 1rem;
-  min-height: 500px;
+  min-height: 400px;
   background-color: #fff;
   padding: 15px 20px;
   border-radius: 8px;
@@ -124,7 +124,7 @@ export default {
   border-radius: 50%;
   border: none;
   background-color: #9395d3;
-  position: fixed;
+  position: absolute;
 
   bottom: -80px;
   right: 20px;
