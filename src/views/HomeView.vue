@@ -111,8 +111,8 @@ header > div > h1 {
   border: none;
   background-color: #9395d3;
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 0px;
+  transform: translate(-130%, -50%);
 }
 
 .tasks-finished {
@@ -126,6 +126,6 @@ header > div > h1 {
   background-color: #9395d3;
   position: absolute;
   bottom: 100px;
-  right: 20px;
+  transform: translate(-130%, -50%);
 }
 </style>

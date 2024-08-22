@@ -5,6 +5,25 @@
       <div>
         <TodoList :filter="filterList" />
       </div>
+      <router-link to="/add-task">
+        <div class="add-task-button">
+          <svg
+            width="16"
+            height="17"
+            viewBox="0 0 16 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 1.54688V15.3281M1.875 8.4375H14.125H1.875Z"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -55,7 +74,7 @@ header > h1 {
   border: none;
   background-color: #9395d3;
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 0px;
+  transform: translate(-130%, -50%);
 }
 </style>
