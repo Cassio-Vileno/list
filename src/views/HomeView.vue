@@ -110,7 +110,8 @@ header > div > h1 {
   border-radius: 50%;
   border: none;
   background-color: #9395d3;
-  position: absolute;
+  position: fixed;
+
   bottom: 0px;
   transform: translate(-130%, -50%);
 }
@@ -124,7 +125,8 @@ header > div > h1 {
   border-radius: 50%;
   border: none;
   background-color: #9395d3;
-  position: absolute;
+  position: fixed;
+
   bottom: 100px;
   transform: translate(-130%, -50%);
 }

@@ -124,7 +124,8 @@ export default {
   border-radius: 50%;
   border: none;
   background-color: #9395d3;
-  position: absolute;
+  position: fixed;
+
   bottom: -80px;
   right: 20px;
 }
